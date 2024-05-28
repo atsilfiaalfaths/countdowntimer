@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNT DOWN TIMER</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div id="stopwatch-ppdb" class="timerstyle" data-date="2024-06-19">
+        <!-- data-date can change as you need -->
+    </div>
+
+    <script>
+
+        const countdownElement = document.getElementById('stopwatch-ppdb');
+        var datecount = countdownElement.getAttribute("data-date");
+        const targetDate = new Date(datecount);
+        console.log(targetDate)
+        function updateCountdown() {
+            const currentDate = new Date();
+            const millisecondsRemaining = targetDate.getTime() - currentDate.getTime();
+
+            const seconds = Math.floor((millisecondsRemaining / 1000) % 60);
+            const minutes = Math.floor((millisecondsRemaining / (1000 * 60)) % 60);
+            const hours = Math.floor((millisecondsRemaining / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(millisecondsRemaining / (1000 * 60 * 60 * 24));
+
+            // Display the formatted countdown string
+            countdownElement.innerHTML = ` <center>
+                                <div class="d-flex mx-auto gap-4">
+                                    <div class="content "><div class="count">${days}</div><div class="title">Hari</div></div>
+                                    <div class="content "><div class="count">${hours}</div><div class="title">Jam</div></div>
+                                    <div class="content "><div class="count">${minutes}</div><div class="title">Menit</div></div>
+                                    <div class="content "><div class="count">${seconds}</div><div class="title">Detik</div></div>
+                                </div>
+                           </center>`;
+        
+
+            if (millisecondsRemaining <= 0) {
+            clearInterval(intervalId); // Stop the timer when it reaches zero
+            countdownElement.innerHTML = "Sedang Berlangsung";
+            }
+        }
+
+        const intervalId = setInterval(updateCountdown, 1000); // Update the countdown every second
+
+        updateCountdown();
+    </script>
+    
+</body>
+</html>

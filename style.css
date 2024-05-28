@@ -1,0 +1,44 @@
+.timerstyle{
+    padding:5px; border-radius:10px; font-size:25px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.timerstyle .content .count {
+    font-size: 28px;
+    background-color: #1695ca;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    width: 60px;
+}
+
+.timerstyle .content .title {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #137fac;
+    font-weight: 700;
+}
+
+.timerstyle .content {
+    background-color: #ffd026;
+    padding: 10px 0 0;
+    border-radius: 10px;
+    width: 80px;
+    margin-right:5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.gap-4 {
+    gap: 4px;
+}
